@@ -4,9 +4,13 @@
   "description": "Boilerplate for express as server and create react app as client",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon index.js",
-    "client": "cd client && npm run start"
+    "client": "npm run start --prefix client",
+    "client-build": "npm run build --prefix client",
+    "client-init": "npm init --prefix client",
+    "dev": "concurrently \"npm run server \" \"npm run client\"",
+    "build": "npm run client-build",
+    "init-project": "concurrently \"npm init \" \"npm client-init\""
   },
   "keywords": [
     "boilerplate",

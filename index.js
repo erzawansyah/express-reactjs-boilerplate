@@ -9,7 +9,7 @@ require('dotenv').config()
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/', function (req, res) {
-    return res.send('<h1>Hello World</h1>');
+    res.sendFile('./client/public/index.html');
 });
 
 app.listen(process.env.PORT, () => {
